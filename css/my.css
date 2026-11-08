@@ -1,0 +1,338 @@
+/* Global Styles */
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+}
+
+/* Tabs */
+.nav-tabs {
+    border-bottom: 3px solid #667eea;
+    background: white;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-tabs > li > a {
+    color: #667eea;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+    padding: 15px 25px !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.nav-tabs > li > a:before {
+    margin-right: 8px;
+}
+
+.nav-tabs > li > a:hover {
+    color: #764ba2;
+    background-color: #f8f9ff;
+    border-bottom: 3px solid #764ba2;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+    background-color: #667eea;
+    color: white;
+    border: none;
+    border-bottom: 3px solid #764ba2;
+}
+
+/* Tab Content */
+.tab-content {
+    background: white;
+    border-radius: 0 8px 8px 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 30px;
+}
+
+.tab-pane {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Country Cards */
+#countryCardContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f5f7ff 0%, #f0f4ff 100%);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    scroll-behavior: smooth;
+    border: 2px solid #e0e7ff;
+}
+
+#countryCardContainer::-webkit-scrollbar {
+    height: 8px;
+}
+
+#countryCardContainer::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 4px;
+}
+
+#countryCardContainer::-webkit-scrollbar-track {
+    background: #f0f4ff;
+    border-radius: 4px;
+}
+
+.country-card {
+    flex: 0 0 150px;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border: 2px solid #e0e7ff;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.country-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+    border-color: #667eea;
+}
+
+.card-body {
+    padding: 12px !important;
+    width: 100%;
+    text-align: center;
+    background: white;
+}
+
+.card-title {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Forms */
+.form-horizontal {
+    background: #f8f9ff;
+    padding: 20px !important;
+    border-radius: 8px;
+    border: 2px solid #e0e7ff;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.control-label {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.form-control {
+    border: 2px solid #e0e7ff;
+    border-radius: 6px;
+    padding: 10px 12px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Buttons */
+.btn {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-info {
+    background: #3498db;
+    color: white;
+}
+
+.btn-info:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+.btn-default {
+    background: #95a5a6;
+    color: white;
+}
+
+.btn-default:hover {
+    background: #7f8c8d;
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* Tables */
+.table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background: #f8f9ff;
+}
+
+.table-striped > tbody > tr:hover {
+    background: #f0f4ff;
+}
+
+.table-bordered {
+    border: 2px solid #e0e7ff;
+}
+
+.table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.table-bordered > thead > tr > th {
+    border-color: #667eea;
+    font-weight: 600;
+}
+
+/* Alerts */
+.alert {
+    border: none;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+.alert-warning {
+    background: #fff3cd;
+    color: #856404;
+    border-left: 4px solid #ffc107;
+}
+
+.alert-info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border-left: 4px solid #17a2b8;
+}
+
+/* Modal */
+.modal-content {
+    border: 2px solid #e0e7ff;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+}
+
+.modal-body {
+    padding: 20px;
+    color: #2c3e50;
+}
+
+/* Utility Padding */
+.p-3 {
+    padding: 1.5rem !important;
+}
+
+/* Icons */
+.glyphicon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Home page Countries heading */
+#home > h1 {
+    color: #27ae60;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
