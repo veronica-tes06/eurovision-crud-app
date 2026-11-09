@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS ProjectPart1;
-USE ProjectPart1;
+CREATE DATABASE IF NOT EXISTS Eurovision2025CrudApp;
+USE Eurovision2025CrudApp;
 
 DROP TABLE IF EXISTS `user`;
 DROP TABLE IF EXISTS `country`;
@@ -40,7 +40,32 @@ INSERT INTO country (id, name, wins, contests, best_place, max_points, automatic
 (9, 'Estonia', 1, 28, '1st', 198, FALSE, 1994),
 (10, 'Finland', 1, 57, '1st', 526, FALSE, 1961),
 (11, 'France', 5, 66, '1st', 499, TRUE, 1956),
-(12, 'Germany', 2, 67, '1st', 385, TRUE, 1956);
+(12, 'Germany', 2, 67, '1st', 385, TRUE, 1956),
+(13, 'Belgium', 1, 66, '1st', 363, FALSE, 1956),
+(14, 'Denmark', 3, 54, '1st', 281, FALSE, 1957),
+(15, 'Georgia', 0, 17, '9th', 136, FALSE, 2007),
+(16, 'Greece', 1, 46, '1st', 230, FALSE, 1974),
+(17, 'Iceland', 0, 37, '2nd', 378, FALSE, 1986),
+(18, 'Ireland', 7, 58, '1st', 226, FALSE, 1965),
+(19, 'Israel', 4, 47, '1st', 529, FALSE, 1973),
+(20, 'Italy', 3, 51, '1st', 524, TRUE, 1956),
+(21, 'Latvia', 1, 26, '1st', 176, FALSE, 2000),
+(22, 'Lithuania', 0, 26, '6th', 162, FALSE, 1994),
+(23, 'Luxembourg', 5, 39, '1st', 142, FALSE, 1956),
+(24, 'Malta', 0, 37, '2nd', 255, FALSE, 1971),
+(25, 'Montenegro', 0, 13, '13th', 44, FALSE, 2007),
+(26, 'Netherlands', 5, 66, '1st', 498, FALSE, 1956),
+(27, 'Norway', 3, 64, '1st', 387, FALSE, 1960),
+(28, 'Poland', 0, 27, '2nd', 166, FALSE, 1994),
+(29, 'Portugal', 1, 56, '1st', 758, FALSE, 1964),
+(30, 'San Marino', 0, 15, '19th', 77, FALSE, 2008),
+(31, 'Serbia', 1, 17, '1st', 268, FALSE, 2007),
+(32, 'Slovenia', 0, 30, '7th', 84, FALSE, 1993),
+(33, 'Spain', 2, 65, '1st', 459, TRUE, 1961),
+(34, 'Sweden', 7, 65, '1st', 583, FALSE, 1958),
+(35, 'Switzerland', 3, 66, '1st', 591, FALSE, 1956),
+(36, 'Ukraine', 3, 21, '1st', 631, FALSE, 2003),
+(37, 'United Kingdom', 5, 68, '1st', 466, TRUE, 1957);
 
 INSERT INTO user (id, name, username, password, image) VALUES
 (1, 'Veronica', 'veru92', 'lol123', 'Czech.svg'),

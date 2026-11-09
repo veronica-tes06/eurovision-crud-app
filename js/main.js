@@ -1,5 +1,6 @@
-var countriesURL = "http://localhost/my-project/api/countries";
-var usersURL = "http://localhost/my-project/api/users";
+// Relative URLs so the app works wherever it is served from (built-in server, Apache, XAMPP)
+var countriesURL = "api/countries";
+var usersURL = "api/users";
 var countryMap = {};
 var currentModalCountryId = null;
 
@@ -69,6 +70,17 @@ var renderCountryList = function (data) {
     $('#table_id').DataTable();
 };
 
+// Flag images can be .svg or .png: try .svg first, then .png, then the default flag
+var flagFallback = function(img) {
+    if (img.dataset.png && !img.dataset.triedPng) {
+        img.dataset.triedPng = '1';
+        img.src = img.dataset.png;
+    } else {
+        img.onerror = null;
+        img.src = 'images/default.svg';
+    }
+};
+
 // Render country cards for home page
 var renderCountryCards = function (data) {
     $('#countryCardContainer').empty(); // Clear UI before reloading
@@ -85,9 +97,10 @@ var renderCountryCards = function (data) {
     $.each(list, function(index, country) {
         const card = $(`
             <div class="card country-card" style="min-width:150px;" data-id="${country.id}">
-                <img src="images/${country.name}.svg"
+                <img src="images/${encodeURIComponent(country.name)}.svg"
                      class="card-img-top"
-                     onerror="this.onerror=null; this.src='images/default.svg';">
+                     data-png="images/${encodeURIComponent(country.name)}.png"
+                     onerror="flagFallback(this)">
                 <div class="card-body text-center">
                     <h5 class="card-title">${country.name}</h5>
                 </div>
@@ -382,8 +395,8 @@ var handleUserFormSubmit = function(e) {
     e.preventDefault();
     
     let imageValue = $('#image').val().trim();
-    // Set default.svg if image is empty or doesn't end with .svg
-    if (!imageValue || !imageValue.endsWith('.svg')) {
+    // Set default.svg if image is empty or isn't an .svg/.png file
+    if (!imageValue || !(imageValue.endsWith('.svg') || imageValue.endsWith('.png'))) {
         imageValue = 'default.svg';
     }
     

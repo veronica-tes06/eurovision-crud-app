@@ -1,4 +1,6 @@
 <?php
+// Slim 2.3.3 predates PHP 8 - hide its deprecation notices so they do not break the JSON output
+error_reporting(E_ALL & ~E_DEPRECATED);
 require 'Slim/Slim.php';
 require 'crud_api.php';
 require 'database.php';
